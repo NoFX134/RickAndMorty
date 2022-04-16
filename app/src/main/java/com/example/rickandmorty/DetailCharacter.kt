@@ -13,7 +13,8 @@ class DetailCharacter : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_character)
         val name: TextView = findViewById(R.id.name)
-        var position = intent.getIntExtra("Position", -1)
+        val position = intent.getIntExtra("Position", -1)
+        name.text = position.toString()
 
     }
 }

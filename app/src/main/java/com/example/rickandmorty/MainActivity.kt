@@ -57,9 +57,10 @@ class MainActivity : AppCompatActivity(), CharacterAdapter.ItemClickListener {
 
     override fun onItemClick(position: Int) {
         val intent = Intent(this, DetailCharacter::class.java)
-        intent.putExtra("Position", position)
-        startActivity(intent)
+           intent.putExtra("Position", (position+20*userId-19))
+            startActivity(intent)
     }
+
 
     private fun setupRecycleview() {
         recyclerView = findViewById(R.id.recyclerView)
@@ -71,7 +72,8 @@ class MainActivity : AppCompatActivity(), CharacterAdapter.ItemClickListener {
         viewModel.getCharacter(userId)
         viewModel.myResponse.observe(this) { response ->
             if (response.isSuccessful) {
-                characterAdapter.seData(response.body()?.results
+                characterAdapter.seData(
+                    response.body()?.results
                 )
             } else {
                 Toast.makeText(
