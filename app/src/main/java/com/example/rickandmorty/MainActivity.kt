@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val repository = Repository()
         val viewModelFactory = MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
-        viewModel.getCharacter(40)
+        viewModel.getCharacter(38)
         viewModel.myResponse.observe(this) { response ->
             if (response.isSuccessful) {
                 val resultList = response.body()?.results
