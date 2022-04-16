@@ -9,5 +9,5 @@ import retrofit2.http.Query
 interface CharacterApi {
     @GET("character")
 
-    suspend fun getCharachter(@Query("page") page:Int): Response<MutableList<ResultsItem>>
+    suspend fun getCharachter(@Query("page") page:Int): Response<Character>
 }

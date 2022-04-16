@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 import retrofit2.Response
 
 class MainViewModel(private val repository: Repository) : ViewModel() {
-    val myResponse: MutableLiveData<Response<MutableList<ResultsItem>>> = MutableLiveData()
+    val myResponse: MutableLiveData<Response<Character>> = MutableLiveData()
 
     fun getCharacter(userId: Int) {
         viewModelScope.launch {

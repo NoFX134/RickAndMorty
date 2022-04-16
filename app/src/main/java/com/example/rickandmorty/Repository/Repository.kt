@@ -6,7 +6,7 @@ import com.example.rickandmorty.Model.ResultsItem
 import retrofit2.Response
 
 class Repository {
-    suspend fun getCharacter(userId: Int): Response<MutableList<ResultsItem>> {
+    suspend fun getCharacter(userId: Int): Response<Character> {
         return RetrofitInstance.api.getCharachter(userId)
     }
 }

@@ -3,8 +3,6 @@ package com.example.rickandmorty
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.rickandmorty.Repository.Repository
 
@@ -18,15 +16,18 @@ class MainActivity : AppCompatActivity() {
         val viewModelFactory = MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
         viewModel.getCharacter(40)
-        viewModel.myResponse.observe(this, Observer { response ->
+        viewModel.myResponse.observe(this) { response ->
             if (response.isSuccessful) {
-                response.body()?.forEach {
-                    Log.d("Response", it.name.toString())
-                    Log.d("Response", "-------------------")
+                val resultList = response.body()?.results
+                resultList?.forEach {
+                    Log.d("Response", it?.name.toString())
+                    Log.d("Response", it?.gender.toString())
+                    Log.d("Response", it?.image.toString())
+                    Log.d("Response", "xxxxxxxxxxxxxxxxxxx ")
                 }
             } else {
                 Log.d("Response", response.code().toString())
             }
-        })
+        }
     }
 }
