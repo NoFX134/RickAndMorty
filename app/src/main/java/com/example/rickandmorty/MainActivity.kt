@@ -16,25 +16,43 @@ import com.example.rickandmorty.adapter.CharacterAdapter
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainViewModel
-    private lateinit var button: Button
+    private lateinit var nextPage: Button
+    private lateinit var previousPage: Button
     private val characterAdapter by lazy { CharacterAdapter() }
     private var userId = 1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        button = findViewById(R.id.button)
+        nextPage = findViewById(R.id.nextPage)
+        previousPage = findViewById(R.id.previousPage)
+
         setupRecycleview()
 
         val repository = Repository()
         val viewModelFactory = MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
         request(userId)
-        button.setOnClickListener {
-            userId += 1
-            request(userId)
+
+        nextPage.setOnClickListener {
+            if (userId < 42) {
+                userId += 1
+                request(userId)
+            } else Toast.makeText(
+                this, "Такой страницы не существует",
+                Toast.LENGTH_LONG
+            ).show()
+        }
+
+        previousPage.setOnClickListener {
+            if (userId > 1) {
+                userId -= 1
+                request(userId)
+            } else Toast.makeText(
+                this, "Такой страницы не существует",
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
-
 
     private fun setupRecycleview() {
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
@@ -49,11 +67,10 @@ class MainActivity : AppCompatActivity() {
                 characterAdapter.seData(response.body()?.results)
             } else {
                 Toast.makeText(
-                    this, "Ошибка ${response.code().toString()}",
+                    this, "Ошибка ${response.code().toString()}\n Не найдено",
                     Toast.LENGTH_LONG
                 ).show()
             }
-
         })
     }
 }

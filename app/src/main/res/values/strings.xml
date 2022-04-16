@@ -3,4 +3,5 @@
     <string name="nextPage">Next Page</string>
     <string name="name">name</string>
     <string name="gender">gender</string>
+    <string name="previousPage">previous page</string>
 </resources>
