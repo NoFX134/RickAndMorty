@@ -7,6 +7,6 @@ import retrofit2.Response
 
 class Repository {
     suspend fun getCharacter(userId: Int): Response<Character> {
-        return RetrofitInstance.api.getCharachter(userId)
+        return RetrofitInstance.api.getCharacter(userId)
     }
 }

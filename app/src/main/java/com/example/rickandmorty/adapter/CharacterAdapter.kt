@@ -1,10 +1,12 @@
 package com.example.rickandmorty.adapter
 
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmorty.Model.Character
 import com.example.rickandmorty.Model.ResultsItem
@@ -12,7 +14,8 @@ import com.example.rickandmorty.R
 import com.squareup.picasso.Picasso
 
 
-class CharacterAdapter() : RecyclerView.Adapter<CharacterAdapter.MyViewHolder>() {
+class CharacterAdapter(val mItemClickListener: ItemClickListener) :
+    RecyclerView.Adapter<CharacterAdapter.MyViewHolder>() {
     private var character = Character()
     private var characterList = character.results
 
@@ -21,6 +24,13 @@ class CharacterAdapter() : RecyclerView.Adapter<CharacterAdapter.MyViewHolder>()
         val name: TextView = itemView.findViewById(R.id.name)
         val gender: TextView = itemView.findViewById(R.id.gender)
         val species: TextView = itemView.findViewById(R.id.species)
+        val cardView: CardView = itemView.findViewById(R.id.CardView)
+
+        init {
+            itemView.setOnClickListener {
+                mItemClickListener.onItemClick(adapterPosition)
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -38,6 +48,8 @@ class CharacterAdapter() : RecyclerView.Adapter<CharacterAdapter.MyViewHolder>()
         holder.name.text = characterList?.get(position)?.name.toString()
         holder.gender.text = characterList?.get(position)?.gender.toString()
         holder.species.text = characterList?.get(position)?.species.toString()
+
+
     }
 
     fun seData(newList: List<ResultsItem?>?) {
@@ -45,6 +57,11 @@ class CharacterAdapter() : RecyclerView.Adapter<CharacterAdapter.MyViewHolder>()
         notifyDataSetChanged()
 
     }
+
+    interface ItemClickListener {
+        fun onItemClick(position: Int)
+    }
+
 }
 
 
