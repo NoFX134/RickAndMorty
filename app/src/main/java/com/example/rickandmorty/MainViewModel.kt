@@ -11,13 +11,19 @@ import retrofit2.Response
 
 class MainViewModel(private val repository: Repository) : ViewModel() {
     val myResponse: MutableLiveData<Response<Character>> = MutableLiveData()
+    val myResponseDetailCharacter: MutableLiveData<Response<ResultsItem>> = MutableLiveData()
 
     fun getCharacter(userId: Int) {
         viewModelScope.launch {
             val response = repository.getCharacter(userId)
             myResponse.value = response
         }
-
+    }
+    fun getDetailCharacter ( characterNumber: Int) {
+        viewModelScope.launch {
+            val response = repository.getDetailCharacter(characterNumber)
+            myResponseDetailCharacter.value = response
+        }
     }
 }
 
