@@ -78,11 +78,12 @@ class MainActivity : AppCompatActivity(), CharacterAdapter.ItemClickListener {
                     response.body()?.results
                 )
             } else {
+
                 Toast.makeText(
                     this, "Ошибка ${response.code().toString()}\n Не найдено",
                     Toast.LENGTH_LONG
                 ).show()
-            }
+           }
         }
     }
 

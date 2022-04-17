@@ -31,10 +31,10 @@
             android:id="@+id/name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
             android:paddingEnd="2dp"
+            android:paddingStart="0dp"
             android:text="@string/name"
             android:textColor="@android:color/black"
             android:textSize="18sp"
@@ -44,26 +44,32 @@
 
         <TextView
             android:id="@+id/species"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="12dp"
+            android:paddingEnd="2dp"
+            android:paddingStart="0dp"
             android:text="@string/species"
             android:textColor="@android:color/black"
             android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/image"
             app:layout_constraintTop_toBottomOf="@+id/name" />
 
         <TextView
             android:id="@+id/gender"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="12dp"
+            android:paddingEnd="2dp"
+            android:paddingStart="0dp"
             android:text="@string/gender"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/image"
             app:layout_constraintTop_toBottomOf="@+id/species" />
 
