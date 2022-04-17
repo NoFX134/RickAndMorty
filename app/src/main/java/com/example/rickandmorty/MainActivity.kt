@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity(), CharacterAdapter.ItemClickListener {
             if (userId < 42) {
                 userId += 1
                 request(userId)
+                recyclerView.scrollToPosition(0)
             } else Toast.makeText(
                 this, "Такой страницы не существует",
                 Toast.LENGTH_SHORT
@@ -48,6 +49,7 @@ class MainActivity : AppCompatActivity(), CharacterAdapter.ItemClickListener {
             if (userId > 1) {
                 userId -= 1
                 request(userId)
+                recyclerView.scrollToPosition(0)
             } else Toast.makeText(
                 this, "Такой страницы не существует",
                 Toast.LENGTH_SHORT
