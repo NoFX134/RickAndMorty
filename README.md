@@ -11,4 +11,5 @@
 *  Coroutines для асинхронной загрузки данных
 *  Попытка реализовать архитектуру MVVM
 ### Скриншоты
-
+<img src="screenshot/Screenshot_20220417_193253.png" width="300">
+<img src="screenshot/Screenshot_20220417_193453.png" width="300">
