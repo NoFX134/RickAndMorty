@@ -1,7 +1,6 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/CardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -26,7 +25,8 @@
             android:layout_marginBottom="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/characterAvatar" />
 
         <TextView
             android:id="@+id/name"
@@ -37,34 +37,33 @@
             android:text="@string/name"
             android:textColor="@android:color/black"
             android:textSize="18sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/gender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="156dp"
-            android:layout_marginTop="26dp"
-            android:text="@string/gender"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/name" />
 
         <TextView
             android:id="@+id/species"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="156dp"
-            android:layout_marginTop="26dp"
-            android:text="species"
+            android:layout_marginTop="18dp"
+            android:text="@string/species"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="156dp"
+            android:layout_marginTop="18dp"
+            android:text="@string/gender"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gender" />
+            app:layout_constraintTop_toBottomOf="@+id/species" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

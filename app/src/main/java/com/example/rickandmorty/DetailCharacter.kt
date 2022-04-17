@@ -18,16 +18,16 @@ class DetailCharacter : AppCompatActivity() {
         setContentView(R.layout.activity_detail_character)
 
         val repository = Repository()
-        val name: TextView = findViewById(R.id.name)
+        val name: TextView = findViewById(R.id.characterName)
         val position = intent.getIntExtra("Position", -1)
 
         val viewModelFactory = MainViewModelFactory(repository)
         viewModel=ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
         viewModel.getDetailCharacter(position)
-        viewModel.myResponseDetailCharacter.observe(this, Observer { response ->
+        viewModel.myResponseDetailCharacter.observe(this) { response ->
             if (response.isSuccessful)
-                Toast.makeText(this, response.body()?.name.toString(), Toast.LENGTH_SHORT ).show()
-        })
+                Toast.makeText(this, response.body()?.name.toString(), Toast.LENGTH_SHORT).show()
+        }
 
     }
 }

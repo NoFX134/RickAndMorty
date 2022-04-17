@@ -45,9 +45,9 @@ class CharacterAdapter(val mItemClickListener: ItemClickListener) :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         Picasso.get().load(characterList?.get(position)?.image).into(holder.image)
-        holder.name.text = characterList?.get(position)?.name.toString()
-        holder.gender.text = characterList?.get(position)?.gender.toString()
-        holder.species.text = characterList?.get(position)?.species.toString()
+        holder.name.text = "Имя:\n${characterList?.get(position)?.name}"
+        holder.gender.text = "Пол: ${characterList?.get(position)?.gender.toString()}"
+        holder.species.text = "Раса: ${characterList?.get(position)?.species.toString()}"
 
 
     }

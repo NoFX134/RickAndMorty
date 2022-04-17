@@ -4,4 +4,9 @@
     <string name="name">name</string>
     <string name="gender">gender</string>
     <string name="previousPage">previous page</string>
+    <string name="species">species</string>
+    <string name="status">status</string>
+    <string name="location">location</string>
+    <string name="episode">episode</string>
+    <string name="characterAvatar">characterAvatar</string>
 </resources>

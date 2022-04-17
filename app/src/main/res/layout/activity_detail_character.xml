@@ -6,13 +6,80 @@
     android:layout_height="match_parent"
     tools:context=".DetailCharacter">
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="206dp"
-        android:text="TextView"
+
+    <ImageView
+        android:id="@+id/characterImage"
+        android:layout_width="0dp"
+        android:layout_height="241dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/characterAvatar" />
+
+    <TextView
+        android:id="@+id/characterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/name"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/characterImage"
+        app:layout_constraintTop_toBottomOf="@+id/characterImage" />
+
+
+    <TextView
+        android:id="@+id/characterSpecies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/species"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/characterName" />
+
+    <TextView
+        android:id="@+id/characterGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/gender"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/characterSpecies" />
+
+    <TextView
+        android:id="@+id/characterStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/status"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/location"
+        app:layout_constraintTop_toBottomOf="@+id/characterImage" />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="159dp"
+        android:text="@string/location"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/characterImage"
+        app:layout_constraintTop_toBottomOf="@+id/characterStatus" />
+
+    <TextView
+        android:id="@+id/episode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/episode"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/location"
+        app:layout_constraintTop_toBottomOf="@+id/location" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
