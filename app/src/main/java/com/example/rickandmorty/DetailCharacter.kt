@@ -29,10 +29,10 @@ class DetailCharacter : AppCompatActivity() {
         val characterEpisode: TextView = findViewById(R.id.characterEpisode)
 
         val repository = Repository()
-        val viewModelFactory = MainViewModelFactory(repository)
+        val viewModelFactory = MainViewModelFactory(application, repository)
 
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
-        viewModel.getDetailCharacter(characterNumber)
+        viewModel.getDetailCharacter(characterNumber, this)
         viewModel.myResponseDetailCharacter.observe(this) { response ->
             if (response.isSuccessful) {
                 characterName.text = "Имя:\n${response.body()?.name}"

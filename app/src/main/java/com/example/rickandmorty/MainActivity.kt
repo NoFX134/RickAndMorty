@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity(), CharacterAdapter.ItemClickListener {
         previousPage = findViewById(R.id.previousPage)
         setupRecycleview()
         val repository = Repository()
-        val viewModelFactory = MainViewModelFactory(repository)
+        val viewModelFactory = MainViewModelFactory(application, repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
         request(userId)
 
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity(), CharacterAdapter.ItemClickListener {
     }
 
     private fun request(userId: Int) {
-        viewModel.getCharacter(userId)
+        viewModel.getCharacter(userId, this)
         viewModel.myResponse.observe(this) { response ->
             if (response.isSuccessful) {
                 characterAdapter.seData(

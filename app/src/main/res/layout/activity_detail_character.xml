@@ -26,20 +26,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="@string/name"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/characterImage"
             app:layout_constraintTop_toBottomOf="@+id/characterImage" />
 
         <TextView
             android:id="@+id/characterSpecies"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="84dp"
-            android:text="@string/species"
             android:textSize="18sp"
-            app:layout_constraintEnd_toStartOf="@+id/characterGender"
-            app:layout_constraintHorizontal_bias="0.032"
+            android:paddingEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@id/characterGender"
             app:layout_constraintStart_toStartOf="@+id/characterImage"
             app:layout_constraintTop_toBottomOf="@+id/characterImage" />
 
@@ -48,7 +46,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="84dp"
-            android:text="@string/gender"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +57,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="56dp"
             android:layout_marginTop="84dp"
-            android:text="@string/status"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/characterGender"
             app:layout_constraintTop_toBottomOf="@+id/characterImage" />
@@ -70,7 +66,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="@string/location"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/characterImage"
             app:layout_constraintTop_toBottomOf="@+id/characterSpecies" />
@@ -80,7 +75,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/episode"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/characterImage"
             app:layout_constraintTop_toBottomOf="@+id/characterLocation" />

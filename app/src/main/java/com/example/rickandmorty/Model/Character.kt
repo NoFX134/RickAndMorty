@@ -1,39 +1,84 @@
 package com.example.rickandmorty.Model
 
+import com.google.gson.annotations.SerializedName
+
 data class Character(
-	val results: List<ResultsItem?>? = null,
-	val info: Info? = null
+    @field:SerializedName("results")
+    val results: List<ResultsItem?>? = null,
+    @field:SerializedName("info")
+    val info: Info? = null
 )
 
-data class ResultsItem(
-	val image: String? = null,
-	val gender: String? = null,
-	val species: String? = null,
-	val created: String? = null,
-	val origin: Origin? = null,
-	val name: String? = null,
-	val location: Location? = null,
-	val episode: List<String?>? = null,
-	val id: Int? = null,
-	val type: String? = null,
-	val url: String? = null,
-	val status: String? = null
+
+data class Origin(
+
+    @field:SerializedName("name")
+    val name: String? = null,
+
+    @field:SerializedName("url")
+    val url: String? = null
 )
 
 data class Location(
-	val name: String? = null,
-	val url: String? = null
+
+    @field:SerializedName("name")
+    val name: String? = null,
+
+    @field:SerializedName("url")
+    val url: String? = null
+)
+
+data class ResultsItem(
+
+    @field:SerializedName("image")
+    val image: String? = null,
+
+    @field:SerializedName("gender")
+    val gender: String? = null,
+
+    @field:SerializedName("species")
+    val species: String? = null,
+
+    @field:SerializedName("created")
+    val created: String? = null,
+
+    @field:SerializedName("origin")
+    val origin: Origin? = null,
+
+    @field:SerializedName("name")
+    val name: String? = null,
+
+    @field:SerializedName("location")
+    val location: Location? = null,
+
+    @field:SerializedName("episode")
+    val episode: List<String?>? = null,
+
+    @field:SerializedName("id")
+    val id: Int? = null,
+
+    @field:SerializedName("type")
+    val type: String? = null,
+
+    @field:SerializedName("url")
+    val url: String? = null,
+
+    @field:SerializedName("status")
+    val status: String? = null
 )
 
 data class Info(
-	val next: String? = null,
-	val pages: Int? = null,
-	val prev: Any? = null,
-	val count: Int? = null
-)
 
-data class Origin(
-	val name: String? = null,
-	val url: String? = null
+    @field:SerializedName("next")
+    val next: String? = null,
+
+    @field:SerializedName("pages")
+    val pages: Int? = null,
+
+    @field:SerializedName("prev")
+    val prev: Any? = null,
+
+    @field:SerializedName("count")
+    val count: Int? = null
 )
 

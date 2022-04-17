@@ -1,11 +1,12 @@
 package com.example.rickandmorty
 
+import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.rickandmorty.Repository.Repository
 
-class MainViewModelFactory(private val repository: Repository) : ViewModelProvider.Factory {
+class MainViewModelFactory(val app: Application, private val repository: Repository) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return MainViewModel(repository) as T
+        return MainViewModel(app,repository) as T
     }
 }
