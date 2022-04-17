@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:text="@string/previousPage"
         android:textSize="12sp"
+        android:layout_marginStart="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView"  />
 
@@ -32,6 +33,7 @@
         android:layout_height="wrap_content"
         android:text="@string/nextPage"
         android:textSize="12sp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 
