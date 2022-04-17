@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity(), CharacterAdapter.ItemClickListener {
 
     override fun onItemClick(position: Int) {
         val intent = Intent(this, DetailCharacter::class.java)
-           intent.putExtra("Position", (position+20*userId-19))
+           intent.putExtra("characterNumber", (position+20*userId-19))
             startActivity(intent)
     }
 
