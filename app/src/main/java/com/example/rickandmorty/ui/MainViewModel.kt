@@ -1,4 +1,4 @@
-package com.example.rickandmorty
+package com.example.rickandmorty.ui
 
 
 import android.app.Application
@@ -14,6 +14,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.rickandmorty.Model.Character
 import com.example.rickandmorty.Model.ResultsItem
 import com.example.rickandmorty.Repository.Repository
+import com.example.rickandmorty.RickAmdMortyApplication
 import kotlinx.coroutines.launch
 import retrofit2.Response
 

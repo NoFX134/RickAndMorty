@@ -1,13 +1,11 @@
-package com.example.rickandmorty
+package com.example.rickandmorty.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.rickandmorty.Model.Character
+import com.example.rickandmorty.R
 import com.example.rickandmorty.Repository.Repository
 import com.squareup.picasso.Picasso
 
